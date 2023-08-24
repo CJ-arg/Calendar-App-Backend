@@ -71,7 +71,6 @@ const eliminarEvento = async (req, res = response) => {
   const uid = req.uid;
   try {
     const evento = await Evento.findById(eventoId);
-
     if (!evento) {
       return res.status(404).json({
         ok: false,
