@@ -9,12 +9,10 @@ const {
   actualizarEvento,
   eliminarEvento,
 } = require("../controllers/events");
+
 const router = Router();
-
 router.use(validarJWT);
-
 router.get("/", getEventos);
-// post un nuevo evento
 router.post(
   "/",
   [
@@ -25,7 +23,7 @@ router.post(
   ],
   crearEvento
 );
-// update Evento
+
 router.put(
   "/:id",
   [
@@ -37,7 +35,6 @@ router.put(
   actualizarEvento
 );
 
-// delete evento
 router.delete("/:id", eliminarEvento);
 
 module.exports = router;
